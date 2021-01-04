@@ -82,24 +82,42 @@
 # print(results)
 
 #A1027
+'''
+几个测试点
+1.输出大于10的数显示ABC
+2.输入小于13的数 需要左边补齐一位0
+3.全输入为零
+'''
+# l = input().split(' ')
+# D = 13
+# L = list(map(int,l))
+# ll = []
+# results = ''
+# radix = ['0','1','2','3','4','5','6','7','8','9','A','B','C']
+# for N in L:
+#     if(N == 0):
+#         ll.append([0,0])
+#     else:
+#         temp = []
+#         while N>=D:
+#             temp.append(N%D)
+#             N = int(N/D)
+#         temp.append(N%D)
+#         while len(temp) < 2:
+#             temp.append(0)
+#         ll.append(temp)
+#
+# for i in range(len(ll)):
+#     for j in range(len(ll[i])-1,-1,-1):
+#         if results!='':
+#             results = results+radix[ll[i][j]]
+#         else:
+#             results = results+'#'+radix[ll[i][j]]
+# print(results)
+
+#A1058
 l = input().split(' ')
-D = 13
-L = list(map(int,l))
-ll = []
-result = []
-results = ''
-for N in L:
-    if(N == 0):
-        print(0)
-    else:
-        while N>=D:
-            ll.append(N%D)
-            N = int(N/D)
-        ll.append(N%D)
-        for i in range(len(ll)-1,-1,-1):
-            result.append(ll[i])
-            # if results!='':
-            #     results = results+ ' ' +str(ll[i])
-            # else:
-            #     results = results+str(ll[i])
-            print(ll[i],end=' ')
+A = list(map(int,l[0].split(".")))
+B = list(map(int,l[1].split(".")))
+num = A[0]*17*29+A[1]*29+A[2] +B[0]*17*29+B[1]*29+B[2]
+print("{0}.{1}.{2}".format(int(num/(29*17)),int((num%(29*17))/29),(num%(29*17)%29)))
