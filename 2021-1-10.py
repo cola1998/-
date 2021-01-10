@@ -92,38 +92,84 @@ sorted(list,key = lambda x:(x1,x2))
 #     for x in students:
 #         print(x)
 
-def WorldRichest():
-    line = input().split(' ')
-    N = int(line[0])
-    K = int(line[1])
-    users = []
-    query = []
-    for i in range(N):
-        line = input().split(' ')
-        users.append(line)
-    #先对users进行按照年纪/财富值进行排序 每个年龄只取前100名
-    users = sorted(users,key=lambda x:(x[2],x[1],x[0]),reverse=True)
-    # print(users)
+'''
+A1055
+独立完成，但是有两个测试点超时
+学习到如果待排序的要求顺序不一样（如一个要求从小到大、另一个要求从大到小），可以利用负号进行调整
+大神的代码只有一个测试点超时  有时间可以学习一下
 
-    for i in range(K):
-        line = input().split(' ')
-        line = list(map(int,line))
-        query.append(line)
-    for i in range(len(query)):
-        number = query[i][0]
-        j = 0
-        tag = 0
-        print("Case #{}:".format(i+1))
-        while tag == 0:
-            while int(users[j][1])>=query[i][1] and int(users[j][1])<=query[i][2] and number>0:
-                j += 1
-                print("{0} {1} {2}".format(users[j][0],users[j][1],users[j][2]))
-                number -= 1
-                if number == 0:
-                    tag = -1
-            j += 1
+'''
+# import copy
+# def WorldRichest():
+#     line = input().split(' ')
+#     N = int(line[0])
+#     K = int(line[1])
+#     users = []
+#     query = []
+#     for i in range(N):
+#         linen = input().split(' ')
+#         line = [linen[0],int(linen[1]),int(linen[2])]
+#         users.append(line)
+#     #先对users进行按照年纪/财富值进行排序 每个年龄只取前100名
+#     users = sorted(users,key=lambda x:(-x[2],x[1],x[0]))
+#
+#     for i in range(K):
+#         line = input().split(' ')
+#         line = list(map(int,line))
+#         query.append(line)
+#     for i in range(len(query)):
+#         number = query[i][0]
+#         print("Case #{}:".format(i+1))
+#         k = copy.copy(number)
+#         for j in range(len(users)):
+#             if int(users[j][1])>=query[i][1] and int(users[j][1])<=query[i][2] and number>0:
+#                 print("{0} {1} {2}".format(users[j][0],users[j][1],users[j][2]))
+#                 number -= 1
+#                 if number == 0:
+#                     break
+#         if(number == k):
+#             print("None")
+
+#B1029
+# def keyboard():
+#     l = input()
+#     l2 = input()
+#     l = l.upper()
+#     l2 = l2.upper()
+#     result = ''
+#     HashTable = [i*0 for i in range(128)]
+#     for i in range(len(l)):
+#         if(l[i] in l2):
+#             pass
+#         else:
+#             if(HashTable[ord(l[i])] == 0):
+#                 result = result + l[i]
+#                 HashTable[ord(l[i])] = 1
+#             else:
+#                 pass
+#     print(result)
+
+#b1033
+def keyboard2():
+    l = input()
+    l2 = input()
+    l = l.lower()
+
+    result = ''
+    HashTable = [i*0 for i in range(128)]
+    for i in range(len(l)):
+        if(l[i] in l2):
+            pass
+        else:
+            if(HashTable[ord(l[i])] == 0):
+                result = result + l[i]
+                HashTable[ord(l[i])] = 1
+            else:
+                pass
 
 if __name__ == '__main__':
     # telephone()
     # listSorting()
-    WorldRichest()
+    # WorldRichest()
+    # keyboard()
+    keyboard2()
