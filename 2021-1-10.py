@@ -150,26 +150,53 @@ A1055
 #     print(result)
 
 #b1033
-def keyboard2():
-    l = input()
-    l2 = input()
-    l = l.lower()
+'''
+测试样例：
+AC
+aAbBcCdD
+输出
+bBdD
+'''
+# def keyboard2():
+#     l = input() #输入坏的键
+#     l2 = input() #输入要输出的句子
+#     l = l.lower()
+#     upper_tag = 0
+#     result = ''
+#     HashTable = [i*0 for i in range(128)]
+#     for i in range(len(l)):
+#         if(HashTable[ord(l[i])] == 0):
+#             HashTable[ord(l[i])] = 1  #将不能用的置为1
+#             HashTable[ord(l[i])-32] = 1
+#         if(l[i] == '+'):
+#             upper_tag = 1
+#     for i in range(len(l2)):
+#         if(HashTable[ord(l2[i])]==1):
+#             pass
+#         else:
+#             if(upper_tag==1 and l2[i].isupper()):
+#                 pass
+#             else:
+#                 result = result+l2[i]
+#     print(result)
 
-    result = ''
-    HashTable = [i*0 for i in range(128)]
+#B1038
+def Score():
+    n = int(input())
+    l = input().split(' ')
+    q = input().split(' ')
+    hashTable = [i*0 for i in range(101)]
     for i in range(len(l)):
-        if(l[i] in l2):
-            pass
-        else:
-            if(HashTable[ord(l[i])] == 0):
-                result = result + l[i]
-                HashTable[ord(l[i])] = 1
-            else:
-                pass
+        hashTable[int(l[i])] += 1
+    result = []
+    for j in range(1,len(q)):
+        result.append(str(hashTable[int(q[j])]))
+    print(" ".join(result))
 
 if __name__ == '__main__':
     # telephone()
     # listSorting()
     # WorldRichest()
     # keyboard()
-    keyboard2()
+    # keyboard2()
+    Score()
