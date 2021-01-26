@@ -1,4 +1,4 @@
-#A1002 求两个多项式的和  -- 最后一个测试样例未通过
+# A1002 求两个多项式的和  -- 最后一个测试样例未通过
 # from collections import defaultdict
 # from functools import reduce
 # l1 = input().split(' ')
@@ -40,7 +40,7 @@
 #         else:
 #             print(values[i])
 
-#A1009
+# A1009
 # from collections import defaultdict
 # from functools import reduce
 # l1 = input().split(' ')
@@ -85,7 +85,7 @@
 #     else:
 #         print("{0} {1}".format(remain_list[i],values[i]),end=' ')
 
-#B1041
+# B1041
 # N = int(input())
 # inf_list = {}
 # for i in range(N):
@@ -98,7 +98,7 @@
 # for i in range(len(find_list)):
 #     print("{0} {1}".format(inf_list[find_list[i]][0],inf_list[find_list[i]][1]))
 
-#B1004
+# B1004
 # n = int(input())
 # max = 0
 # min = 999
@@ -115,10 +115,10 @@
 # print("{0} {1}".format(max_infor[0],max_infor[1]))
 # print("{0} {1}".format(min_infor[0],min_infor[1]))
 
-#B1028
+# B1028
 N = int(input())
 
-number = 0 #有效生日的个数
+number = 0  # 有效生日的个数
 
 max_name = ""
 min_name = ""
@@ -126,19 +126,19 @@ min_time = "18140906"
 max_time = "20140906"
 for i in range(N):
     l = input().split(' ')
-    time = l[1].replace('/','')
-    if(time >= "18140906" and time < "20140906"):
+    time = l[1].replace('/', '')
+    if (time >= "18140906" and time < "20140906"):
         number += 1
-        if(time <= max_time):
-            max_time=time
-            max_name=l[0]
+        if (time <= max_time):
+            max_time = time
+            max_name = l[0]
         if (time >= min_time):
             min_time = time
             min_name = l[0]
 if number == 0:
     print(number)
 else:
-    print("{0} {1} {2}".format(number,max_name,min_name))
+    print("{0} {1} {2}".format(number, max_name, min_name))
 
 # 不超时版本
 # import sys

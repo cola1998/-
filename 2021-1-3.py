@@ -1,4 +1,4 @@
-#codeup 1928  显示答案错误
+# codeup 1928  显示答案错误
 # import time
 # import datetime
 #
@@ -35,9 +35,9 @@
 #     for i in range(len(ll)-1,-1,-1):
 #         print(ll[i],end='')
 
-#B1037
-#应付P 实付A  得出找的零钱
-#规则 17Sickle = 1Galleon 29Knut = 1Sickle
+# B1037
+# 应付P 实付A  得出找的零钱
+# 规则 17Sickle = 1Galleon 29Knut = 1Sickle
 # l = input().split(' ')
 # P = list(map(int,l[0].split('.')))
 # A = list(map(int,l[1].split('.')))
@@ -50,7 +50,7 @@
 #     resultn = An-Pn
 #     print("{0}.{1}.{2}".format(int(resultn/(17*29)),int((resultn%(17*29))/29),(resultn%(17*29))%29))
 
-#A1019
+# A1019
 # l = input().split(' ')
 # D = int(l[1])
 # N = int(l[0])
@@ -81,7 +81,7 @@
 #     print('Yes')
 # print(results)
 
-#A1027
+# A1027
 '''
 几个测试点
 1.输出大于10的数显示ABC
@@ -115,9 +115,9 @@
 #             results = results+'#'+radix[ll[i][j]]
 # print(results)
 
-#A1058
+# A1058
 l = input().split(' ')
-A = list(map(int,l[0].split(".")))
-B = list(map(int,l[1].split(".")))
-num = A[0]*17*29+A[1]*29+A[2] +B[0]*17*29+B[1]*29+B[2]
-print("{0}.{1}.{2}".format(int(num/(29*17)),int((num%(29*17))/29),(num%(29*17)%29)))
+A = list(map(int, l[0].split(".")))
+B = list(map(int, l[1].split(".")))
+num = A[0] * 17 * 29 + A[1] * 29 + A[2] + B[0] * 17 * 29 + B[1] * 29 + B[2]
+print("{0}.{1}.{2}".format(int(num / (29 * 17)), int((num % (29 * 17)) / 29), (num % (29 * 17) % 29)))

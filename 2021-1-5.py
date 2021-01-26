@@ -1,4 +1,4 @@
-#B1031 查验身份证
+# B1031 查验身份证
 # N = int(input())
 # q = [7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2]
 # result = []
@@ -26,7 +26,7 @@
 #     for j in range(len(result)):
 #         print(result[j])
 
-#B1002
+# B1002
 # n = input()
 # result = 0
 # for i in range(len(n)):
@@ -40,7 +40,7 @@
 #     else:
 #         print('{0}'.format(ss[int(result[i])]),end=' ')
 
-#B1014
+# B1014
 '''
 读题一定要读懂，是位置相同的***
 第一轮检查时 A-G 和 A-N要限定完整
@@ -77,7 +77,7 @@
 # while(len(hh)<2):
 #     hh = '0' +hh
 # print("{0} {1}:{2}".format(day_list[result[0]],hh,tag))
-#B1024
+# B1024
 # x = input().split('.')
 # if x[0][0]!='+':
 #     result = x[0][0]
@@ -110,16 +110,16 @@
 #         x[0] = x[0] + x[1]
 #         result = result + x[0]
 #     print(result)
-#B1048
+# B1048
 l = input().split(' ')
 result = ''
-t = ['J','Q','K']
-if(len(l[1])>len(l[0])):
+t = ['J', 'Q', 'K']
+if (len(l[1]) > len(l[0])):
     r = ''
-    for j in range(len(l[1])-len(l[0])):
-        r = r +'0'
-    l[0] = r+l[0]
-elif(len(l[1])<len(l[0])):
+    for j in range(len(l[1]) - len(l[0])):
+        r = r + '0'
+    l[0] = r + l[0]
+elif (len(l[1]) < len(l[0])):
     r = ''
     for j in range(len(l[0]) - len(l[1])):
         r = r + '0'
@@ -129,8 +129,8 @@ elif(len(l[1])<len(l[0])):
 还要注意位数不同需要补零进行运算，而不能直接截取
 '''
 j = 0
-for i in range(len(l[1])-1,-1,-1):
-    if(j%2!=0):
+for i in range(len(l[1]) - 1, -1, -1):
+    if (j % 2 != 0):
         x = int(l[1][i]) - int(l[0][i])
         if (x < 0):
             x = x + 10

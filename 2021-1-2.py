@@ -10,7 +10,7 @@
 #     A[j+1] = x
 # print(A)
 
-#假币问题 3 12 0  计算比较次数
+# 假币问题 3 12 0  计算比较次数
 # n = input().split()
 # n = list(map(int,n)) #硬币个数
 # times = [] #记录最多需要寻找的次数
@@ -26,7 +26,7 @@
 #         times.append(count)
 # print(times)
 
-#B1032
+# B1032
 # from collections import defaultdict  // 最后一个测试样例超时
 # from functools import reduce
 # N = int(input())
@@ -65,7 +65,7 @@
 #
 # print("{0} {1}".format(k,max))
 
-#A1011 W T L
+# A1011 W T L
 # n = []
 # name_max = []
 # nn = ['W','T','L']
@@ -79,7 +79,7 @@
 # profit = (n[0]*n[1]*n[2]*0.65 - 1) * 2
 # print("{0} {1} {2} {3}".format(name_max[0],name_max[1],name_max[2],round(profit,2)))
 
-#A1006 找开门和关门的人
+# A1006 找开门和关门的人
 # N = int(input())
 # n_list = []
 # early_time = '240000'
@@ -98,7 +98,7 @@
 #         late_name = l[0]
 # print("{0} {1}".format(early_name,late_name))
 
-#A1036 name gender ID grade  输出女生最高分 和男生最低分 以及分数差
+# A1036 name gender ID grade  输出女生最高分 和男生最低分 以及分数差
 # N = int(input())
 # n_list = []
 # max_grade = 0
@@ -132,7 +132,7 @@
 # else:
 #     print(max_grade-min_grade)
 
-#B1027
+# B1027
 # def nn():
 #     print()
 # def kk(n,c):
@@ -167,7 +167,7 @@
 #         nn()
 #     print(n-sum)
 
-#A1031
+# A1031
 # def kk(n,c):
 #     for i in range(n):
 #         print("{0}".format(c),end='')
@@ -190,14 +190,14 @@
 #         print(s[N-i])
 #     print(s[max-1:max-1+n2])
 
-#计数排序
+# 计数排序
 A = input().split(' ')
-A = list(map(int,A))
-count = [i*0 for i in range(len(A))]
-S = [i*0 for i in range(len(A))]
-for i in range(len(A)-1):
-    for j in range(i+1,len(A)):
-        if(A[i]<A[j]):
+A = list(map(int, A))
+count = [i * 0 for i in range(len(A))]
+S = [i * 0 for i in range(len(A))]
+for i in range(len(A) - 1):
+    for j in range(i + 1, len(A)):
+        if (A[i] < A[j]):
             count[j] += 1
         else:
             count[i] += 1

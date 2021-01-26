@@ -1,4 +1,4 @@
-#A1016 借鉴别人的代码
+# A1016 借鉴别人的代码
 '''
 学习到
 1、可以直接使用sorted函数进行排序 无需自己再写代码进行排序操作
@@ -56,7 +56,7 @@
 #             result = result + 'Total amount: ${:.2f}'.format(count/100)
 #             print(result)
 
-#A1028
+# A1028
 '''
 又是借鉴大神代码的一天
 学习到
@@ -130,7 +130,7 @@ A1055
 #         if(number == k):
 #             print("None")
 
-#B1029
+# B1029
 # def keyboard():
 #     l = input()
 #     l2 = input()
@@ -149,7 +149,7 @@ A1055
 #                 pass
 #     print(result)
 
-#b1033
+# b1033
 '''
 测试样例：
 AC
@@ -157,6 +157,8 @@ aAbBcCdD
 输出
 bBdD
 '''
+
+
 # def keyboard2():
 #     l = input() #输入坏的键
 #     l2 = input() #输入要输出的句子
@@ -180,18 +182,19 @@ bBdD
 #                 result = result+l2[i]
 #     print(result)
 
-#B1038
+# B1038
 def Score():
     n = int(input())
     l = input().split(' ')
     q = input().split(' ')
-    hashTable = [i*0 for i in range(101)]
+    hashTable = [i * 0 for i in range(101)]
     for i in range(len(l)):
         hashTable[int(l[i])] += 1
     result = []
-    for j in range(1,len(q)):
+    for j in range(1, len(q)):
         result.append(str(hashTable[int(q[j])]))
     print(" ".join(result))
+
 
 if __name__ == '__main__':
     # telephone()

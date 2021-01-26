@@ -1,4 +1,4 @@
-#A1001
+# A1001
 # l = input().split(' ')
 # sum = int(l[0]) + int(l[1])
 # result = ''
@@ -31,7 +31,7 @@
 #     else:
 #         print(d[int(sum[i])])
 
-#A1035
+# A1035
 # def check(s,d):
 #     if(s in d):
 #         return s
@@ -61,7 +61,7 @@
 #     for key,value in modified.items():
 #         print("{0} {1}".format(key,value))
 
-#A1077 最长公共后缀
+# A1077 最长公共后缀
 # def reserveS(s):
 #     result = ''
 #     for i in range(len(s)):
@@ -95,35 +95,35 @@
 # else:
 #     print(result)
 
-#A1082
+# A1082
 x = input()
 tag = ''
-if(x[0]=='-'):
+if (x[0] == '-'):
     tag = '-'
     x = x[1:]
     print(x)
 
-digit = ['ling','yi','er','san','si','wu','liu','qi','ba','jiu']
-danwei = ['Shi','Bai','Qian','Wan','Yi']
+digit = ['ling', 'yi', 'er', 'san', 'si', 'wu', 'liu', 'qi', 'ba', 'jiu']
+danwei = ['Shi', 'Bai', 'Qian', 'Wan', 'Yi']
 
 result = ''
 k = 0
-for i in range(len(x)-1,-1,-3):
+for i in range(len(x) - 1, -1, -3):
 
-    if(i==0):
+    if (i == 0):
         result = digit[int(x[i])] + ' ' + result
-    elif (i%4==0 and result!=''):
+    elif (i % 4 == 0 and result != ''):
         result = ' ' + digit[int(x[i])] + ' ' + result
-    elif (i%4==0):
+    elif (i % 4 == 0):
         result = ' ' + digit[int(x[i])]
     else:
-        if(k<=2):
-            result = ' ' + digit[int(x[i])] +' ' +danwei[k]+ result
+        if (k <= 2):
+            result = ' ' + digit[int(x[i])] + ' ' + danwei[k] + result
         else:
-            result = ' ' + digit[int(x[i])] + ' ' + danwei[k-3] + result
+            result = ' ' + digit[int(x[i])] + ' ' + danwei[k - 3] + result
         k += 1
-        if(k==2):
-            result = ' ' + danwei[3]+result
-        elif (k==5):
+        if (k == 2):
+            result = ' ' + danwei[3] + result
+        elif (k == 5):
             result = ' ' + danwei[4] + result
-print(tag+result)
+print(tag + result)

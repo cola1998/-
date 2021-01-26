@@ -1,4 +1,4 @@
-#A1082  待修改
+# A1082  待修改
 # x = input()
 # tag = ''
 # if(x[0]=='-'):
@@ -31,11 +31,13 @@
 #             result = ' ' + danwei[4] + result
 # print(tag+result)
 
-#排序
+# 排序
 '''
 1、选择排序
 2、直接插入排序
 '''
+
+
 # def selectSort(L):
 #     for i in range(len(L)):
 #         min = i
@@ -56,7 +58,7 @@
 #         L[j] = v
 #     return L
 
-#B1015  超时
+# B1015  超时
 # def cmp(a,b):
 #     #1 表示a大  -1表示b大
 #     if(a['flag'] != b['flag']):
@@ -113,7 +115,7 @@
 # for i in range(len(students)):
 #     print("{0} {1} {2}".format(students[i]['id'],students[i]['de'],students[i]['ca']))
 
-#A1012
+# A1012
 # def sort(L,key):
 #     for i in range(len(L)):
 #         j = i
@@ -189,8 +191,8 @@
 #         print('N/A')
 
 
-#A1025
-#可以使用插入排序
+# A1025
+# 可以使用插入排序
 # N = int(input()) #考点数
 # testee_number = 0  #考生数量
 # rank_list = []
@@ -250,35 +252,37 @@
 #         print("{0} {1} {2} {3}".format(rank_list[i]['registration_number'], rank_list[i]['rank'],
 #                                        rank_list[i]['location_number'], rank_list[i]['local_rank']))
 
-#A1016
-def cmp(a,b):
+# A1016
+def cmp(a, b):
     a = a.replace(':', '')
-    b = b.replace(':','')
-    if(a[:2]!=b[:2]):
-        if(a[:2]>b[:2]):
+    b = b.replace(':', '')
+    if (a[:2] != b[:2]):
+        if (a[:2] > b[:2]):
             return 1
         else:
             return -1
     else:
-        if(a[2:4]>b[2:4]):
+        if (a[2:4] > b[2:4]):
             return 1
-        elif(a[2:4]<b[2:4]):
+        elif (a[2:4] < b[2:4]):
             return -1
         else:
             if (a[4:6] != b[4:6]):
-                if(a[4:6]>b[4:6]):
+                if (a[4:6] > b[4:6]):
                     return 1
                 else:
                     return -1
             else:
-                if(a[6:]!=b[6:]):
-                    if(a[6:]>b[6:]):
+                if (a[6:] != b[6:]):
+                    if (a[6:] > b[6:]):
                         return 1
                     else:
                         return -1
                 else:
                     return 0
-def calm(a,b,L):
+
+
+def calm(a, b, L):
     end_day = int(b[:2])
     end_hour = int(b[3:5])
     end_minute = int(b[6:])
@@ -287,25 +291,26 @@ def calm(a,b,L):
     temp_day = int(a[:2])
     temp_hour = int(a[3:5])
     temp_minute = int(a[6:])
-    while (temp_day<end_day or temp_hour<end_hour or temp_minute<end_minute):
+    while (temp_day < end_day or temp_hour < end_hour or temp_minute < end_minute):
         temp_minute += 1
         k += 1
         money += L[temp_hour]
-        if(temp_minute >= 60):
-            temp_minute=0
-            temp_hour+=1
-        if(temp_hour >= 24):
+        if (temp_minute >= 60):
+            temp_minute = 0
+            temp_hour += 1
+        if (temp_hour >= 24):
             temp_hour = 0
             temp_day += 1
-    return round(money,2),k
+    return round(money, 2), k
+
 
 from collections import defaultdict
 
-l = input().split(' ') #代表每一时间段资费
-l = list(map(int,l))
+l = input().split(' ')  # 代表每一时间段资费
+l = list(map(int, l))
 N = int(input())
 info = defaultdict(list)
-keys  = []
+keys = []
 for i in range(N):
     x = input().split(' ')
     v = x[0]
@@ -314,14 +319,14 @@ for i in range(N):
 for key in info.keys():
     keys.append(key)
 keys.sort()
-#同一个用户按照时间顺序排列 检查顺序是否是online offline即可
+# 同一个用户按照时间顺序排列 检查顺序是否是online offline即可
 for i in range(len(keys)):
     d = info[keys[i]]
     for j in range(len(d)):
         v = d[j]
         k = j
-        while k>0 and cmp(d[k-1][0],v[0])==1:
-            d[k] = d[k-1]
+        while k > 0 and cmp(d[k - 1][0], v[0]) == 1:
+            d[k] = d[k - 1]
             k -= 1
         d[k] = v
     info[keys[i]] = d
@@ -329,16 +334,17 @@ qualified_list = {}
 for i in range(len(keys)):
     tag = 0
     qualified_list[keys[i]] = []
-    for j in range(1,len(info[keys[i]])):
-        if(info[keys[i]][j-1][1] == 'on-line' and info[keys[i]][j][1] == 'off-line'):
-            money,k = calm(info[keys[i]][j-1][0][3:],info[keys[i]][j][0][3:],l)
-            q = [info[keys[i]][j-1][0][3:],info[keys[i]][j][0][3:],money/100,info[keys[i]][j][0][:2],k]
+    for j in range(1, len(info[keys[i]])):
+        if (info[keys[i]][j - 1][1] == 'on-line' and info[keys[i]][j][1] == 'off-line'):
+            money, k = calm(info[keys[i]][j - 1][0][3:], info[keys[i]][j][0][3:], l)
+            q = [info[keys[i]][j - 1][0][3:], info[keys[i]][j][0][3:], money / 100, info[keys[i]][j][0][:2], k]
             qualified_list[keys[i]].append(q)
 for key in keys:
-    print(key,qualified_list[key][0][3])
-    sum  = 0
+    print(key, qualified_list[key][0][3])
+    sum = 0
     for i in range(len(qualified_list[key])):
         sum += qualified_list[key][i][2]
-        print("{0} {1} {2} $".format(qualified_list[key][i][0],qualified_list[key][i][1],qualified_list[key][i][4]),end='')
-        print("%.2f"%qualified_list[key][i][2])
-    print("Total amount: $%.2f"%sum)
+        print("{0} {1} {2} $".format(qualified_list[key][i][0], qualified_list[key][i][1], qualified_list[key][i][4]),
+              end='')
+        print("%.2f" % qualified_list[key][i][2])
+    print("Total amount: $%.2f" % sum)

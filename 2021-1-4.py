@@ -1,5 +1,5 @@
-#3.6字符串处理
-#codeup 5901 回文串
+# 3.6字符串处理
+# codeup 5901 回文串
 # l = input()
 # tag = 0
 # for i in range(int(len(l)/2)):
@@ -10,8 +10,8 @@
 #     print('NO')
 # else:
 #     print('YES')
-#B1009
-#注意是单词顺序调换
+# B1009
+# 注意是单词顺序调换
 # l = input().split(' ')
 # result = ''
 # for i in range(len(l)-1,-1,-1):
@@ -21,7 +21,7 @@
 #         result = result+' '+l[i]
 # print(result)
 
-#B1006
+# B1006
 # S = ['B','S']
 # l = int(input())
 # result = []
@@ -42,8 +42,9 @@
 #         results = results + str(i)
 #     print(results)
 
-#B1021
+# B1021
 from collections import defaultdict
+
 x = input()
 result = defaultdict(list)
 for i in range(len(x)):
@@ -53,4 +54,4 @@ for i in result.keys():
     key.append(i)
 key.sort()
 for i in range(len(key)):
-    print("{0}:{1}".format(key[i],len(result[key[i]])))
+    print("{0}:{1}".format(key[i], len(result[key[i]])))
