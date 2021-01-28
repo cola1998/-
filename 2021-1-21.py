@@ -85,7 +85,7 @@ def fill_test():
     if d[0]['dis'] != '0':
         print("The maximum travel distance=0.00")
         return
-    price = d[0]['price']*Cmax
+    price = d[0]['price'] * Cmax
     contain = 0
     now = 0
     while (True):
@@ -98,8 +98,8 @@ def fill_test():
             arr = [t for t in temp if t['price'] < d[now]['price']]
             if len(arr) == 0:
                 # 选择第一个即可
-                contain = Cmax - (temp[0]['dis']-now)/Davg
-                price += temp[0]['price']*contain
+                contain = Cmax - (temp[0]['dis'] - now) / Davg
+                price += temp[0]['price'] * contain
                 now = temp[0]['dis']
             else:
                 contain = Cmax - (arr[0]['dis'] - now) / Davg
@@ -113,7 +113,7 @@ def fill_test():
 # A1037
 def magicCoupon():
     n1 = int(input())
-    l1 = list(map(int,input().split(' ')))
+    l1 = list(map(int, input().split(' ')))
     n2 = int(input())
     l2 = list(map(int, input().split(' ')))
 
@@ -122,27 +122,65 @@ def magicCoupon():
     l2 = sorted(l2)
     for i in range(len(l1)):
         if l1[i] < 0 and l2[i] < 0:
-            sum += l1[i]*l2[i]
+            sum += l1[i] * l2[i]
         else:
             break
-    i = len(l1)-1
-    j = len(l2)-1
-    while(i>=0 and j>=0 and l1[i]>0 and l2[j]>0):
-        sum += l1[i]*l2[j]
-        i-=1
-        j-=1
+    i = len(l1) - 1
+    j = len(l2) - 1
+    while (i >= 0 and j >= 0 and l1[i] > 0 and l2[j] > 0):
+        sum += l1[i] * l2[j]
+        i -= 1
+        j -= 1
     print(sum)
 
+
 # A1067
+def swap(a, b):
+    temp = a
+    a = b
+    b = temp
+    return a, b
+
+
 def sortWithSwap():
-    l = list(map(int,input().split(' ')))
+    n = int(input())
+    l = list(map(int, input().split(' ')))
     times = 0
+    k = 0  # 记录不在本位的数字个数
+    pos = [0 for i in range(len(l))]
+    for i in range(len(l)):
+        if i != l[i] and i != 0:
+            k += 1
+        pos[l[i]] = i
+
+    while k > 0:
+        # 如果0在本位上
+        if pos[0] == 0:
+            for i in range(len(pos)):
+                if pos[i] != i:
+                    pos[0], pos[i] = swap(pos[0], pos[i])
+                    times += 1
+                    break
+        while pos[0] != 0:
+            s = pos[0]
+            pos[0], pos[s] = swap(pos[0], pos[pos[0]])
+            k -= 1
+            times += 1
+    print(times)
 
 
 # A1038
-
+def buble_sort():
+    l = [8, 7, 12, 1, 5, 0, 6, 9, 2]
+    for i in range(len(l) - 1):
+        for j in range(len(l) - i - 1):
+            if(l[j] < l[j + 1]):
+                l[j],l[j + 1] = swap(l[j], l[j + 1])
+    print(l)
 if __name__ == "__main__":
-    # zuxiaoshu()
-    # moonCake()
-    # fill_test()
-    magicCoupon()
+        # zuxiaoshu()
+        # moonCake()
+        # fill_test()
+        # magicCoupon()
+        # sortWithSwap()
+    buble_sort()
