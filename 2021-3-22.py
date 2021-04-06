@@ -93,6 +93,7 @@ count = 0
 for i in range(len(xita)):
     count += dic[xita[i-1]][0]
     ans.append(count)
+print(ans)
 #逆向统计大于θ的1个数
 ans1 = []
 count = 0
@@ -100,6 +101,7 @@ for i in range(len(xita)-1,-1,-1):
     count += dic[xita[i]][1]
     ans1.append(count)
 ans1 = ans1[::-1]
+print(ans1)
 max = 0
 k = 0
 s = []
